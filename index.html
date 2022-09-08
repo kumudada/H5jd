@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale= 1.0">
+    <!-- 引入css初始化文件 -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!-- 引入首页css文件 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <title>京东</title>
+
+</head>
+
+<body>
+    <header class="app">
+        <ul>
+            <li><img src="./images/close.png" alt="close"></li>
+            <li><img src="./images/logo.png" alt="logo"></li>
+            <li>打开京东，购物更轻松</li>
+            <li>立即打开</li>
+        </ul>
+    </header>
+    <!-- 搜索 -->
+    <div class="search-warp">
+        <div class="search-btn">
+            <img src="./images/s-btn.png" alt="">
+        </div>
+        <div class="search">
+            <div class="jd-icon"></div>
+            <input type="text" placeholder="苹果14热卖">
+            <!-- 二倍精灵图答使用 -->
+            <div class="sou"></div>
+
+        </div>
+        <div class="search-login">登录</div>
+    </div>
+
+    <!-- 主体内容部分 -->
+    <div class="main-content">
+        <!-- 焦点图 -->
+        <div class="slider">
+            <!-- dpg 是京东开发的一种图片样式，和jpg类似但是比系统尺寸jpg格式存储占用接近少一半 -->
+            <img src="./upload/banner.dpg" alt="">
+        </div>
+        <!-- 品牌图 -->
+        <div class="brand">
+            <div><img src="./upload/pic11.dpg" alt=""></div>
+            <div><img src="./upload/pic22.dpg" alt=""></div>
+            <div><img src="./upload/pic33.dpg" alt=""></div>
+        </div>
+        <!-- 导航栏 -->
+        <nav>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav2.webp" alt="">
+                <span>全球购</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav3.webp" alt="">
+                <span>京东服饰</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav3.webp" alt="">
+                <span>京东生鲜</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+            <a href="">
+                <img src="./upload/nav1.webp" alt="">
+                <span>京东超市</span>
+            </a>
+
+        </nav>
+        <!-- 新闻模块 -->
+        <div class="news clearfix">
+            <a href="">
+                <img src="./upload/new1.dpg" alt="">
+            </a>
+            <a href="">
+                <img src="./upload/new2.dpg" alt="">
+            </a>
+            <a href="">
+                <img src="./upload/new3.dpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // 搜索栏自动改变背景
+        let searchWarp = document.getElementsByClassName("search-warp")[0];
+        window.addEventListener("scroll", function () {
+            if (document.documentElement.scrollTop > 20) {
+                searchWarp.style.backgroundColor = "#f63515";
+                searchWarp.style.top = "0px";
+            } else {
+                if (getComputedStyle(app, null).display == "block") {
+                    searchWarp.style.backgroundColor = "transparent";
+                    searchWarp.style.top = "45px";
+                } else {
+                    searchWarp.style.backgroundColor = "transparent";
+                    searchWarp.style.top = "0px";
+                };
+            };
+        })
+        // 上方广告点击关闭
+        //获取节点
+        let app = document.querySelectorAll('.app')[0];
+        let appLi = app.getElementsByTagName('ul')[0].getElementsByTagName("li");
+        appLi[0].addEventListener("click", function () {
+            app.style.display = "none";
+            searchWarp.style.top = "0px";
+        })
+        // console.log(getComputedStyle(app, null).display);
+    </script>
+</body>
+
+</html>

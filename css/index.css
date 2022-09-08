@@ -1,0 +1,305 @@
+/* 京东的初始化样式 */
+.clearfix:bafore,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    /* IE6~7专有 */
+    *zoom: 1;
+
+}
+
+body {
+    width: 100%;
+    /* 设置最小宽度 */
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    /* background-color: #ccc; */
+    height: 1000px;
+
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    /*点击高亮需要，清除，设置为transparent 完成透明*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*禁用长按页面弹出菜单*/
+img,
+a {
+    -webkit-touch-callout: none;
+}
+
+/* app模块 start */
+.app {
+    /* width: 100%; */
+    height: 45px;
+
+}
+
+.app ul li {
+    float: left;
+    height: 45px;
+    background-color: #333333;
+    /* 以下居中方式也可以对img标签生效 */
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+}
+
+/* 设置四个盒子的宽度 */
+/*百分比使用京东的盒子百分比*/
+.app ul li:nth-child(1) {
+    /* background-color: pink; */
+    width: 8%;
+}
+
+/* x号 */
+.app ul li:nth-child(1) img {
+    height: 10px;
+    width: 10px;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    /* 设置宽度会等比例缩放 */
+    width: 30px;
+    /* 图片和文字居中对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #f63515;
+}
+
+/* app模块 end */
+
+/* 搜索模块 */
+/*
+布局思路：
+--左右两个盒子固定尺寸，中间的搜索栏宽度自适应
+--左右盒子使用定位设置位置，中间盒子采用标准流，不设定宽度用margin值限定位置
+*/
+.search-warp {
+    z-index: 999;
+    position: fixed;
+    top: 45px;
+    height: 44px;
+    overflow: hidden;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    transition: all 0.5s;
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: pink; */
+    width: 40px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    /* margin-top: 5px; */
+}
+
+.search-btn img {
+    height: 20px;
+    width: 23px;
+}
+
+/* 登录 */
+.search-login {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    /* background-color: skyblue; */
+    color: #fff;
+    text-align: left;
+    line-height: 44px;
+}
+
+/* 搜索模块 */
+.search {
+    position: relative;
+    /* width: 100%; */
+    height: 30px;
+    background-color: #fff;
+    margin: 0px 50px;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+
+/* 里面的input */
+.search input {
+    outline-style: none;
+    /* border: none; */
+    border: 1px solid #fff;
+    position: absolute;
+    top: 0px;
+    left: 73px;
+    width: 195px;
+    height: 24px;
+    line-height: 24px;
+    /* padding:0px 10px; */
+}
+
+/* 搜索中的logo区域 */
+.jd-icon {
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background-image: url(../images/jd.png);
+    background-repeat: no-repeat;
+    background-size: 20px 15px;
+}
+
+/* 添加小横线 */
+.jd-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -8px;
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+}
+
+/* 搜索放大镜 */
+.sou {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    /* 二倍精灵图应用 */
+    background-image: url(../images/jd-sprites.png);
+    background-repeat: no-repeat;
+    /*
+    1.将精灵图等比例缩放为原来的一半
+    --使用ps将精灵图缩放为原来的一半
+    --https://www.yunqishi.net/video/93900.html
+    2.计算位置坐标
+    3.background-size 再缩放一半
+    */
+    /* transform: scale(0.5); */
+    background-position: -81px 0;
+    /*应用尺寸也要小二倍*/
+    background-size: 200px auto;
+
+}
+
+/* 焦点图 */
+.slider img {
+    width: 100%;
+}
+
+/* 品牌图模块 */
+.brand {
+    position: relative;
+    top: -15px;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+/* 导航栏模块 */
+nav {
+    padding-top: 5px;
+}
+
+nav a {
+    float: left;
+    display: block;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px;
+}
+
+nav a span {
+    display: block;
+}
+
+/* <!-- 新闻模块 --> */
+.news {}
+
+.news a {
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+/* 方法一 */
+/* .news a:nth-child(2) {
+    width: 25%;
+}
+
+.news a:nth-child(3) {
+    width: 25%;
+} */
+
+/* 方法二 */
+/*n+2 从2往后面选*/
+.news a:nth-child(n+2) {
+    width: 25%;
+    border-left: 1px solid #ccc;
+}
+
+.news a img {
+    width: 100%;
+}
